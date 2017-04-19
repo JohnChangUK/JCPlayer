@@ -5,7 +5,6 @@ var superagent = require('superagent');
 router.get('/:term', function(req, res, next) {
 
     var term = req.params.term;
-
     // request to iTunes search API
     var url = 'http://itunes.apple.com/search';
 
@@ -27,10 +26,9 @@ router.get('/:term', function(req, res, next) {
 
         res.json({
             confirmation: 'success',
-            response: data.results
+            results: data.results
         });
     });
-
 });
 
 module.exports = router;
