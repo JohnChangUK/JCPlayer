@@ -8,7 +8,7 @@ module.exports = {
     },
     output: {
         filename: 'public/build/bundle.js',
-        sourceMapFileName: 'public/build/bundle.map'
+        sourceMapFilename: 'public/build/bundle.map'
     },
     devtool: '#source-map',
     module: {
