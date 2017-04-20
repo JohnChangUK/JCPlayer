@@ -9,6 +9,6 @@ JCPlayer is a podcast audio streamer with search functionality. Users can search
 - Express: 
 - Babel: Transpiler which converts ES6 to ES5
 
-## A diagram I drew to break down the fundamentals of Redux
+## A diagram I created to break down the Redux Cycle
 
 ![alt_tag](https://github.com/JohnChangUK/JCPlayer/blob/master/redux.png)
