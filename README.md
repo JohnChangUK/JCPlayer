@@ -11,4 +11,4 @@ A Podcast Player which plays what topics the user wishes, e.g. Sports, Politics
 
 ## A diagram I drew to break down the fundamentals of Redux
 
-![alt_tag](https://github.com/JohnChangUK/JCPlayer/blob/master/redux.png)
+![alt_tag](https://github.com/JohnChangUK/JCPlayer/blob/master/ReduxExplained.png)
