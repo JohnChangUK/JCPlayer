@@ -22,8 +22,7 @@ export default (props) => {
                   <li><a href="Youtube.html" className="no-child">Youtube</a></li>
                   </ul>
               </div>
-          </nav>
-          
+        </nav>
     </div>
     );
 }
