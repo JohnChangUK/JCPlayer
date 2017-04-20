@@ -10,6 +10,6 @@ export default {
         return {
             type: constants.PODCAST_RECEIVED,
             podcasts: podcasts
-        }
+        };
     }
 };
