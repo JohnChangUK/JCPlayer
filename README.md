@@ -11,4 +11,4 @@ JCPlayer is a podcast audio streamer with search functionality. Users can search
 
 ## A diagram I drew to break down the fundamentals of Redux
 
-![alt_tag](https://github.com/JohnChangUK/JCPlayer/blob/master/ReduxExplained.png)
+![alt_tag](https://github.com/JohnChangUK/JCPlayer/blob/master/redux.png)
