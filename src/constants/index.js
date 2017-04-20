@@ -1,0 +1,6 @@
+export default {
+
+    SEARCH_PODCASTS: 'SEARCH_PODCASTS',
+    PODCAST_RECEIVED: 'PODCAST_RECEIVED'
+
+};
