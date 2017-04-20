@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Search } from '../presentation';
-import APIClient from '../../utils';
+import { APIClient } from '../../utils';
 
 class Playlist extends Component {
 
@@ -9,14 +9,17 @@ class Playlist extends Component {
             return;
 
         console.log('searchPodcasts: ' + event.target.value);
-// example search Endpoint: http://localhost:3000/search/sports
-        APIClient.get('http://localhost:3000/search/sports', null)
+        
+    const endpoint = '/search/' + event.target.value;
+
+        APIClient
+        .get(endpoint, null)
         .then(response => {
             console.log(JSON.stringify(response));
         })
         .catch(err => {
             console.log("Error: " + err.message);
-        })
+        });
     }
 
     render() {
