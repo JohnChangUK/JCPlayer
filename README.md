@@ -1,6 +1,6 @@
 # JCPlayer
 
-A Podcast Player which plays what topics the user wishes, e.g. Sports, Politics
+JCPlayer is a podcast audio streamer with search functionality. Users can search for podcasts using the iTunes search API and stream directly through the browser.
 
 ## Technologies Used
 - React: open-source JavaScript library for UI
