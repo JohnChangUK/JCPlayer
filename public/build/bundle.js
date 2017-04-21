@@ -6863,6 +6863,20 @@ exports.default = {
             type: _constants2.default.PODCAST_RECEIVED,
             podcasts: podcasts
         };
+    },
+
+    podcastSelected: function podcastSelected(podcast) {
+        return {
+            type: _constants2.default.PODCAST_SELECTED,
+            podcast: podcast
+        };
+    },
+
+    trackListReady: function trackListReady(list) {
+        return {
+            type: _constants2.default.TRACKLIST_READY,
+            list: list
+        };
     }
 };
 
@@ -6909,7 +6923,9 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
 
     SEARCH_PODCASTS: 'SEARCH_PODCASTS',
-    PODCAST_RECEIVED: 'PODCAST_RECEIVED'
+    PODCAST_RECEIVED: 'PODCAST_RECEIVED',
+    PODCAST_SELECTED: 'PODCAST_SELECTED',
+    TRACKLIST_READY: 'TRACKLIST_READY'
 
 };
 
@@ -11221,12 +11237,33 @@ var Playlist = function (_Component) {
     function Playlist() {
         _classCallCheck(this, Playlist);
 
-        return _possibleConstructorReturn(this, (Playlist.__proto__ || Object.getPrototypeOf(Playlist)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (Playlist.__proto__ || Object.getPrototypeOf(Playlist)).call(this));
+
+        _this.state = {
+            // Referencing the trackList from the reducer, not the state
+            // trackList: null,
+            player: null
+        };
+        return _this;
     }
 
     _createClass(Playlist, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
+            console.log("Component did Mount function here");
+        }
+    }, {
+        key: 'initializePlayer',
+        value: function initializePlayer(list) {
+            var sublist = [];
+            if (list.length > 5) {
+                for (var i = 1; i < 5; i++) {
+                    sublist.push(list[i]);
+                }
+            } else {
+                sublist = Object.assign([], list);
+            }
+
             var ap1 = new _aplayer2.default({
                 element: document.getElementById('player1'),
                 narrow: false,
@@ -11236,34 +11273,12 @@ var Playlist = function (_Component) {
                 theme: '#e6d0b2',
                 preload: 'metadata',
                 mode: 'circulation',
-                music: [{
-                    title: 'Preparation',
-                    author: 'Hans Zimmer/Richard Harvey',
-                    url: 'http://devtest.qiniudn.com/Preparation.mp3',
-                    pic: 'http://devtest.qiniudn.com/Preparation.jpg'
-                }]
+                music: sublist
             });
-            // ap1.on('play', function () {
-            //     console.log('play');
-            // });
-            // ap1.on('play', function () {
-            //     console.log('play play');
-            // });
-            // ap1.on('pause', function () {
-            //     console.log('pause');
-            // });
-            // ap1.on('canplay', function () {
-            //     console.log('canplay');
-            // });
-            // ap1.on('playing', function () {
-            //     console.log('playing');
-            // });
-            // ap1.on('ended', function () {
-            //     console.log('ended');
-            // });
-            // ap1.on('error', function () {
-            //     console.log('error');
-            // });
+            this.setState({
+                // trackList: list,
+                player: ap1
+            });
         }
     }, {
         key: 'searchPodcasts',
@@ -11272,13 +11287,61 @@ var Playlist = function (_Component) {
 
             if (event.keyCode != 13) return;
 
-            console.log('searchPodcasts: ' + event.target.value);
-
             var endpoint = '/search/' + event.target.value;
 
             _utils.APIClient.get(endpoint, null).then(function (response) {
-                // console.log(JSON.stringify(response));
                 _this2.props.podcastsReceived(response.results);
+            }).catch(function (err) {
+                console.log("Error: " + err.message);
+            });
+        }
+    }, {
+        key: 'componentDidUpdate',
+        value: function componentDidUpdate() {
+            var _this3 = this;
+
+            if (this.props.podcasts.selected == null) return;
+
+            // grab the feed url, then make a request for rss feed
+            var feedUrl = this.props.podcasts.selected['feedUrl'];
+            if (feedUrl == null) return;
+
+            console.log("componentDidUpdate Method here");
+            // if (this.state.trackList != null) // Tracks are already loaded
+            //     return;
+
+            if (this.props.podcasts.trackList != null) {
+                if (this.state.player == null)
+                    // Referencing the trackList from the reducer, not the state
+                    this.initializePlayer(this.props.podcasts.trackList);
+
+                return;
+            }
+
+            // Reset the player;
+            if (this.state.player != null) {
+                this.state.player.pause();
+                this.setState({
+                    player: null
+                });
+            }
+
+            _utils.APIClient.get('/feed', { url: feedUrl }).then(function (response) {
+                var podcast = response.podcast;
+                var item = podcast.item;
+
+                var list = [];
+                item.forEach(function (track, i) {
+                    var trackInfo = {};
+                    trackInfo['title'] = track.title[0];
+                    trackInfo['author'] = _this3.props.podcasts.selected.collectionName;
+                    trackInfo['pic'] = _this3.props.podcasts.selected['artworkUrl600'];
+
+                    var enclosure = track.enclosure[0]['$'];
+                    trackInfo['url'] = enclosure['url'];
+                    list.push(trackInfo);
+                });
+                _this3.props.trackListReady(list);
             }).catch(function (err) {
                 console.log("Error: " + err.message);
             });
@@ -11316,6 +11379,9 @@ var dispatchToProps = function dispatchToProps(dispatch) {
     return {
         podcastsReceived: function podcastsReceived(podcasts) {
             return dispatch(_actions2.default.podcastsReceived(podcasts));
+        },
+        trackListReady: function trackListReady(list) {
+            return dispatch(_actions2.default.trackListReady(list));
         }
     };
 };
@@ -11363,8 +11429,16 @@ var Podcasts = function (_Component) {
     }
 
     _createClass(Podcasts, [{
+        key: 'selectPodcast',
+        value: function selectPodcast(podcast, event) {
+            // console.log('Select Podcast: ' + JSON.stringify(podcast));
+            this.props.podcastSelected(podcast);
+        }
+    }, {
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
             var list = this.props.podcasts.all || [];
 
             return _react2.default.createElement(
@@ -11376,7 +11450,7 @@ var Podcasts = function (_Component) {
                         { key: i, className: 'shop-banner animated fadeinup delay-2' },
                         _react2.default.createElement(
                             'a',
-                            { href: '#' },
+                            { onClick: _this2.selectPodcast.bind(_this2, podcast), href: '#' },
                             _react2.default.createElement('img', { src: podcast.artworkUrl600, alt: '' }),
                             _react2.default.createElement(
                                 'div',
@@ -11407,7 +11481,15 @@ var stateToProps = function stateToProps(state) {
     };
 };
 
-exports.default = (0, _reactRedux.connect)(stateToProps)(Podcasts);
+var dispatchToProps = function dispatchToProps(dispatch) {
+    return {
+        podcastSelected: function podcastSelected(podcast) {
+            return dispatch(_actions2.default.podcastSelected(podcast));
+        }
+    };
+};
+
+exports.default = (0, _reactRedux.connect)(stateToProps, dispatchToProps)(Podcasts);
 
 /***/ }),
 /* 107 */
@@ -11713,7 +11795,9 @@ var _constants2 = _interopRequireDefault(_constants);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var initialState = {
-    all: null
+    all: null,
+    selected: null,
+    trackList: null
 };
 
 exports.default = function () {
@@ -11725,9 +11809,24 @@ exports.default = function () {
 
     switch (action.type) {
         case _constants2.default.PODCAST_RECEIVED:
-            console.log('PODCAST_RECEIVED: ' + JSON.stringify(action.podcasts));
+            // console.log('PODCAST_RECEIVED: ' + JSON.stringify(action.podcasts));
             updated['all'] = action.podcasts;
 
+            return updated;
+
+        case _constants2.default.PODCAST_SELECTED:
+            // console.log('PODCAST_SELECTED: ' + JSON.stringify(action.podcast));
+            if (updated.selected != null) {
+                if (updated.selected.collectionId == action.podcast.collectionId) return state;
+            }
+
+            updated['trackList'] = null;
+            updated['selected'] = action.podcast;
+            return updated;
+
+        case _constants2.default.TRACKLIST_READY:
+            console.log("TRACKLIST_READY: ");
+            updated['trackList'] = action.list;
             return updated;
 
         default:
