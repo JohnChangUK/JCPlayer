@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>JCPlayer Shop</title>
+    <meta content="IE=edge" http-equiv="x-ua-compatible"/>
+    <meta content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="yes" name="apple-touch-fullscreen"/>
+
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:300,400,700' rel='stylesheet' type='text/css'/>
+
+    <!-- Icons -->
+    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" media="all" rel="stylesheet" type="text/css"/>
+
+    <!-- Styles -->
+    <link href="css/keyframes.css" rel="stylesheet" type="text/css"/>
+    <link href="css/materialize.min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/swiper.css" rel="stylesheet" type="text/css"/>
+    <link href="css/swipebox.min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+</head>
+
+  <body>
+    <div id="main"> <!-- Main Container -->
+      
+      <!-- Page Contents -->
+      <div id="content" class="main animated fadein">
+        
+        <!-- Hero Header -->
+        <div class="hero-header bg-shop animated fadeindown">
+          <h1 class="hero-title">Shop</h1>
+        </div>
+
+        <!-- Profile Content -->
+        <div class="animated fadeinup delay-1">
+          <div class="shop-banner animated fadeinup delay-1">
+            <a href="category.html">
+              <img src="img/banner1.jpg" alt="">
+              <div class="opacity-overlay valign-wrapper">
+                <div class="valign center width-100">
+                  <h3 class="white-text">New Arrivals</h3>
+                  <p class="white-text">SS 2017</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="shop-banner animated fadeinup delay-2">
+            <a href="category.html">
+              <img src="img/banner2.jpg" alt="">
+              <div class="opacity-overlay valign-wrapper">
+                <div class="valign center width-100">
+                  <h3 class="white-text">Accessories</h3>
+                  <p class="white-text">Watches 2017</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="shop-banner animated fadeinup delay-3">
+            <a href="category.html">
+              <img src="img/banner3.jpg" alt="">
+              <div class="opacity-overlay valign-wrapper">
+                <div class="valign center width-100">
+                  <h3 class="white-text">Music</h3>
+                  <p class="white-text">50% Sales</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="shop-banner-full animated fadeinup delay-3">
+            <a href="category.html">
+              <img src="img/banner4.jpg" alt="">
+              <div class="opacity-overlay valign-wrapper">
+                <div class="valign center width-100">
+                  <h3 class="white-text">Sale</h3>
+                  <p class="white-text">50%</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+          <div class="clr"></div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="page-footer primary-color">
+          <div class="container">
+            <div class="row">
+              <div class="col s12">
+                <p class="center-align grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                <div class="center-align">
+                  <i class="ion-social-facebook m-10 white-text"></i>
+                  <i class="ion-social-twitter m-10 white-text"></i>
+                  <i class="ion-social-pinterest m-10 white-text"></i>
+                  <i class="ion-social-dribbble m-10 white-text"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="line white"></div>
+          <div class="footer-copyright primary-color">
+            <div class="container">
+            2016 Codnauts
+            <a class="grey-text text-lighten-4 right" href="#!">Privacy Policy</a>
+            </div>
+          </div>
+        </footer>
+
+      </div> 
+      <!-- End of Page Contents -->
+
+      <!-- Menu Trigger -->
+      <div class="menu-trigger z-depth-2"> 
+        <div id="menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      
+      <!-- Menu -->
+      <nav id="menu" class="menu">
+        <div class="menu-navigation">
+          <ul class="full-menu collapsible">
+            <li class="menu-title">JCPlayer</li>
+            <li>
+              <div class="collapsible-header">Home</div>
+              <div class="collapsible-body">
+                <ul class="collapsible">
+                  <li>
+                    <a href="/">Home</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+             
+      </nav> <!-- End of Menu -->
+
+    </div><!-- End of Main Container -->
+    <script src="js/jquery-1.12.2.js"></script>
+    <script src="js/modernizr.js"></script>
+    <script src="js/jquery.swipebox.min.js"></script>   
+    <script src="js/jquery.smoothState.min.js"></script> 
+    <script src="js/materialize.min.js"></script> 
+    <script src="js/swiper.min.js"></script>  
+    <script src="js/jquery.mixitup.min.js"></script>
+    <script src="js/masonry.min.js"></script>
+    <script src="js/chart.min.js"></script>
+    <script src="js/functions.js"></script>
+  </body>
+</html>

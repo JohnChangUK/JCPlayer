@@ -5,7 +5,6 @@ import actions from '../../actions';
 class Podcasts extends Component {
 
     selectPodcast(podcast, event) {
-        // console.log('Select Podcast: ' + JSON.stringify(podcast));
         this.props.podcastSelected(podcast);
     }
 
@@ -29,7 +28,6 @@ class Podcasts extends Component {
                     );
                 })
             }
-
             </div>
         );
     }

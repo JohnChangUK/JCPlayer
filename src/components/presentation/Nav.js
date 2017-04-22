@@ -17,9 +17,9 @@ export default (props) => {
               <div className="menu-navigation">
                   <ul className="full-menu collapsible">
 
-                  <li><a href="iTunes.html" className="no-child">iTunes</a></li>
-                  <li><a href="BBC.html" className="no-child">BBC</a></li>
-                  <li><a href="Youtube.html" className="no-child">Youtube</a></li>
+                  <li><a href="/itunes" className="no-child">itunes</a></li>
+                  <li><a href="/news" className="no-child">News</a></li>
+                  <li><a href="/videos" className="no-child">Videos</a></li>
                   </ul>
               </div>
         </nav>

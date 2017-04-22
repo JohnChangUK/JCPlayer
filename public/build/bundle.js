@@ -11240,8 +11240,6 @@ var Playlist = function (_Component) {
         var _this = _possibleConstructorReturn(this, (Playlist.__proto__ || Object.getPrototypeOf(Playlist)).call(this));
 
         _this.state = {
-            // Referencing the trackList from the reducer, not the state
-            // trackList: null,
             player: null
         };
         return _this;
@@ -11276,7 +11274,6 @@ var Playlist = function (_Component) {
                 music: sublist
             });
             this.setState({
-                // trackList: list,
                 player: ap1
             });
         }
@@ -11305,10 +11302,6 @@ var Playlist = function (_Component) {
             // grab the feed url, then make a request for rss feed
             var feedUrl = this.props.podcasts.selected['feedUrl'];
             if (feedUrl == null) return;
-
-            console.log("componentDidUpdate Method here");
-            // if (this.state.trackList != null) // Tracks are already loaded
-            //     return;
 
             if (this.props.podcasts.trackList != null) {
                 if (this.state.player == null)
@@ -11355,6 +11348,7 @@ var Playlist = function (_Component) {
                 _react2.default.createElement(
                     'div',
                     { style: { paddingTop: 64 }, className: 'hero-header bg-shop animated fadeindown' },
+                    _react2.default.createElement('img', { src: 'music.jpg', alt: '', height: '250', width: '100' }),
                     _react2.default.createElement(
                         'div',
                         { className: 'p-20 animated fadeinup delay-1' },
@@ -11431,7 +11425,6 @@ var Podcasts = function (_Component) {
     _createClass(Podcasts, [{
         key: 'selectPodcast',
         value: function selectPodcast(podcast, event) {
-            // console.log('Select Podcast: ' + JSON.stringify(podcast));
             this.props.podcastSelected(podcast);
         }
     }, {
@@ -11695,8 +11688,8 @@ exports.default = function (props) {
                         null,
                         _react2.default.createElement(
                             "a",
-                            { href: "iTunes.html", className: "no-child" },
-                            "iTunes"
+                            { href: "/itunes", className: "no-child" },
+                            "itunes"
                         )
                     ),
                     _react2.default.createElement(
@@ -11704,8 +11697,8 @@ exports.default = function (props) {
                         null,
                         _react2.default.createElement(
                             "a",
-                            { href: "BBC.html", className: "no-child" },
-                            "BBC"
+                            { href: "/news", className: "no-child" },
+                            "News"
                         )
                     ),
                     _react2.default.createElement(
@@ -11713,8 +11706,8 @@ exports.default = function (props) {
                         null,
                         _react2.default.createElement(
                             "a",
-                            { href: "Youtube.html", className: "no-child" },
-                            "Youtube"
+                            { href: "/videos", className: "no-child" },
+                            "Videos"
                         )
                     )
                 )

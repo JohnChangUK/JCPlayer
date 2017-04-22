@@ -9,8 +9,6 @@ class Playlist extends Component {
     constructor() {
         super();
         this.state = {
-    // Referencing the trackList from the reducer, not the state
-            // trackList: null,
             player: null
         };
     }
@@ -41,7 +39,6 @@ class Playlist extends Component {
             music: sublist
         });
         this.setState({
-            // trackList: list,
             player: ap1
         });
     }
@@ -70,10 +67,6 @@ class Playlist extends Component {
         const feedUrl = this.props.podcasts.selected['feedUrl'];
         if (feedUrl == null)
             return; 
-        
-        console.log("componentDidUpdate Method here");
-        // if (this.state.trackList != null) // Tracks are already loaded
-        //     return;
 
         if (this.props.podcasts.trackList != null) {
             if (this.state.player == null)
@@ -118,7 +111,8 @@ class Playlist extends Component {
     render() {
         return (
             <div>
-            <div style={{paddingTop:64}} className="hero-header bg-shop animated fadeindown">        
+            <div style={{paddingTop:64}} className="hero-header bg-shop animated fadeindown"> 
+                <img src="music.jpg" alt="" height="250" width="100" />       
                     <div className="p-20 animated fadeinup delay-1">
                     <div style={{background:'#fff'}} id='player1' className='aplayer'></div>
                     </div>
