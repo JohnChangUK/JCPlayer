@@ -10,19 +10,19 @@ JCPlayer is a podcast audio streamer with search functionality. Users can search
 - Webpack: A module bundler which takes modules with dependencies and generates static assets representing those modules.
 
 ## JCPlayer, live on mobile device (iPhone 6/7 Plus)
-![alt_tag](https://github.com/JohnChangUK/JCPlayer/blob/master/1.png)
+![alt_tag](https://github.com/JohnChangUK/JCPlayer/blob/master/Pic%201.png)
 
 ## Search for a category e.g. "Sports"
-![alt_tag](https://github.com/JohnChangUK/JCPlayer/blob/master/2.png)
+![alt_tag](https://github.com/JohnChangUK/JCPlayer/blob/master/Pic%202.png)
 
 ## Search results for "Sports"
-![alt_tag](https://github.com/JohnChangUK/JCPlayer/blob/master/3.png)
+![alt_tag](https://github.com/JohnChangUK/JCPlayer/blob/master/Pic%203.png)
 
 ## When user has made their selection, the Podcast renders onto the Playlist
-![alt_tag](https://github.com/JohnChangUK/JCPlayer/blob/master/4.png)
+![alt_tag](https://github.com/JohnChangUK/JCPlayer/blob/master/Pic%204.png)
 
 ## Able to minimise
-![alt_tag](https://github.com/JohnChangUK/JCPlayer/blob/master/5.png)
+![alt_tag](https://github.com/JohnChangUK/JCPlayer/blob/master/Pic%205.png)
 
 ## A diagram I created to break down the Redux Cycle
 
