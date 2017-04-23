@@ -18,11 +18,11 @@ class Featured extends Component {
 
                   <Footer />
 
-                </div> 
+                  </div> 
            
                   <Nav />
 
-                </div>
+              </div>
         );
     }
 }

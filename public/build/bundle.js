@@ -11247,9 +11247,7 @@ var Playlist = function (_Component) {
 
     _createClass(Playlist, [{
         key: 'componentDidMount',
-        value: function componentDidMount() {
-            console.log("Component did Mount function here");
-        }
+        value: function componentDidMount() {}
     }, {
         key: 'initializePlayer',
         value: function initializePlayer(list) {
@@ -11802,13 +11800,11 @@ exports.default = function () {
 
     switch (action.type) {
         case _constants2.default.PODCAST_RECEIVED:
-            // console.log('PODCAST_RECEIVED: ' + JSON.stringify(action.podcasts));
             updated['all'] = action.podcasts;
 
             return updated;
 
         case _constants2.default.PODCAST_SELECTED:
-            // console.log('PODCAST_SELECTED: ' + JSON.stringify(action.podcast));
             if (updated.selected != null) {
                 if (updated.selected.collectionId == action.podcast.collectionId) return state;
             }
@@ -11818,7 +11814,6 @@ exports.default = function () {
             return updated;
 
         case _constants2.default.TRACKLIST_READY:
-            console.log("TRACKLIST_READY: ");
             updated['trackList'] = action.list;
             return updated;
 

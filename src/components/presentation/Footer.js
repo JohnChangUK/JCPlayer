@@ -17,11 +17,11 @@ export default (props) => {
             </div>
           </div>
         </div>
-        <div className="line white"></div>
-        <div className="footer-copyright primary-color">
-          <div className="container">
-          JCPlayer John Chang
-          <a className="grey-text text-lighten-4 right" href="#!">JCPlayer©</a>
+          <div className="line white"></div>
+            <div className="footer-copyright primary-color">
+              <div className="container">
+              JCPlayer John Chang
+              <a className="grey-text text-lighten-4 right" href="#!">JCPlayer©</a>
           </div>
         </div>
     </footer>

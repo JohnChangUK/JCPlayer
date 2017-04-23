@@ -14,7 +14,7 @@ class Playlist extends Component {
     }
 
     componentDidMount() {
-        console.log("Component did Mount function here");
+    
     }
 
     initializePlayer(list) {
