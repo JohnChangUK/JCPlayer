@@ -12,16 +12,20 @@ JCPlayer is a podcast audio streamer with search functionality. Users can search
 #### Live on Heroku! Open Chrome Developer Tools and view in iPhone 6 or any other mobile view! - http://jcplayer.herokuapp.com/
 
 # JCPlayer live on mobile device (iPhone 6/7) Search for a category e.g. "Sports"
-![alt_tag](https://github.com/JohnChangUK/JCPlayer/blob/master/Pic%202.png)
+
+<img src="https://github.com/JohnChangUK/JCPlayer/blob/master/Pic%202.png" height="700" width="500">
 
 # Search results for "Sports"
-![alt_tag](https://github.com/JohnChangUK/JCPlayer/blob/master/Pic%203.png)
+
+<img src="https://github.com/JohnChangUK/JCPlayer/blob/master/Pic%203.png" height="700" width="500">
 
 # When user has made their selection, the Podcast renders onto the Playlist
-![alt_tag](https://github.com/JohnChangUK/JCPlayer/blob/master/Pic%204.png)
+
+<img src="https://github.com/JohnChangUK/JCPlayer/blob/master/Pic%204.png" height="700" width="500">
 
 # Able to minimise
-![alt_tag](https://github.com/JohnChangUK/JCPlayer/blob/master/Pic%205.png)
+
+<img src="https://github.com/JohnChangUK/JCPlayer/blob/master/Pic%205.png" height="700" width="500">
 
 # A diagram I created to break down the Redux Cycle
 
