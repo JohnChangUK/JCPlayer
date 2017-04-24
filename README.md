@@ -9,7 +9,7 @@ JCPlayer is a podcast audio streamer with search functionality. Users can search
 - Express: Express is a light-weight web application framework to help organize your web application into an MVC architecture   on the server side.
 - Webpack: A module bundler which takes modules with dependencies and generates static assets representing those modules.
 
-#### Live on Heroku! Open Chrome Developer Tools and view in iPhone 6 or any other mobile view! - http://jcplayer.herokuapp.com/
+#### Live on Heroku! Open Chrome Developer Tools and view in iPhone 6 or any other mobile view! - [JCPlayer](http://jcplayer.herokuapp.com/)
 
 # JCPlayer live on mobile device (iPhone 6/7) Search for a category e.g. "Sports"
 
