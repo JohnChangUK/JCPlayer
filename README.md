@@ -17,7 +17,8 @@ JCPlayer is a podcast audio streamer with search functionality. Users can search
 
 - The strength behind Redux is React.  Given a set of configuring data, React can effortlessly change the visible DOM from one state to another.  Redux builds upon this by being a predictable state container.  That is, it provides reasonable and predictable ways of maintaining your applications state in one place and making tweaks to it.  When you pair this with React, you get an application where you can glance at your data, glance at your views, make one change to your data, and have a reasonable suspicion about how your views will update
 
-# JCPlayer live on mobile device (iPhone 6/7) Search for a category e.g. "Sports"
+# JCPlayer live on mobile device (iPhone 6) 
+## Search for a category e.g. "Sports"
 
 <img src="https://github.com/JohnChangUK/JCPlayer/blob/master/Pic%202.png" height="650" width="400">
 
