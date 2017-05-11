@@ -13,10 +13,6 @@ class Playlist extends Component {
         };
     }
 
-    componentDidMount() {
-    
-    }
-
     initializePlayer(list) {
         let sublist = [];
         if (list.length > 5) {
