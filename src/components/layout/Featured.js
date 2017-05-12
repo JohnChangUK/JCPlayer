@@ -8,20 +8,18 @@ class Featured extends Component {
         return (
             <div id="main"> 
 
-              <div id="content" className="main animated fadein">   
-                  <Playlist />
+              <div id="content" className="main animated fadein"> 
 
+                  <Playlist />
                   <div className="animated fadeinup delay-1">
                   <Podcasts />            
                   <div className="clr"></div>
                   </div>
 
                   <Footer />
-
                   </div> 
            
                   <Nav />
-
               </div>
         );
     }

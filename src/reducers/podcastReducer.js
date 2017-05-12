@@ -7,7 +7,6 @@ var initialState = {
 };
 
 export default (state = initialState, action) => {
-// Inside the function, start with an updated state
     let updated = Object.assign({}, state);
 
     switch(action.type) {

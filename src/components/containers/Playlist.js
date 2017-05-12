@@ -48,6 +48,7 @@ class Playlist extends Component {
         APIClient
         .get(endpoint, null)
         .then(response => {
+// Grabbing the results key from the response, then dispatching it
             this.props.podcastsReceived(response.results);
         })
         .catch(err => {
@@ -97,6 +98,7 @@ class Playlist extends Component {
                 trackInfo['url'] = enclosure['url'];
                 list.push(trackInfo);
             });
+    // This action will populate the trackList in the Reducer
             this.props.trackListReady(list);
         })
         .catch(err => {

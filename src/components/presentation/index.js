@@ -7,5 +7,4 @@ export {
     Footer,
     Nav,
     Search
-
 };
