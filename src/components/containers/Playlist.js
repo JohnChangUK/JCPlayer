@@ -67,7 +67,6 @@ class Playlist extends Component {
 
         if (this.props.podcasts.trackList != null) {
             if (this.state.player == null)
-        // Referencing the trackList from the reducer, not the state
                 this.initializePlayer(this.props.podcasts.trackList);
 
             return;
